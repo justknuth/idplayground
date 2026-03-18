@@ -71,6 +71,7 @@ This method requires running the frontend and backend in separate terminal windo
     ```
 2.  **Start the Frontend**: Open a second terminal, navigate to the project root, and start the Vite server.
     ```bash
+    cd frontend
     npm run dev
     ```
 
