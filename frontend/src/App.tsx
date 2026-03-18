@@ -3,15 +3,12 @@ import { Sidebar, ViewState } from './components/Sidebar';
 import { FlightRecorder } from './components/FlightRecorder';
 import { TokenLab } from './components/TokenLab';
 import { ApiExplorer } from './components/ApiExplorer';
-import { simulateLoginFlow, FlightLog } from './utils/mockAuthEngine';
 import './App.css';
 
 export type IdpMode = 'auth0' | 'okta';
 
 export default function App() {
   const [activeView, setActiveView] = useState<ViewState>('Token Lab');
-  const [flightLogs, setFlightLogs] = useState<FlightLog[]>([]);
-  const [isSimulating, setIsSimulating] = useState(false);
   const [idpMode, setIdpMode] = useState<IdpMode>(() => {
     const saved = localStorage.getItem('idpMode');
     return (saved === 'auth0' || saved === 'okta') ? saved : 'auth0';
@@ -27,12 +24,6 @@ export default function App() {
       document.body.classList.remove('theme-auth0');
     }
   }, [idpMode]);
-
-  const handleSimulate = () => {
-    setIsSimulating(true);
-    setFlightLogs(simulateLoginFlow());
-    setIsSimulating(false);
-  };
 
   return (
     <div className={`app-container theme-${idpMode}`}>
@@ -50,18 +41,7 @@ export default function App() {
 
         <section className="panel main-stage-content">
           {activeView === 'Flight Recorder' ? (
-            <div className="flight-recorder-container">
-              <div className="simulate-btn-container">
-                <button 
-                  className="simulate-btn"
-                  onClick={handleSimulate} 
-                  disabled={isSimulating}
-                >
-                  {isSimulating ? 'Simulating...' : 'Run OIDC Simulation'}
-                </button>
-              </div>
-              <FlightRecorder logs={flightLogs} />
-            </div>
+            <FlightRecorder idpMode={idpMode} />
           ) : activeView === 'Token Lab' ? (
             <TokenLab idpMode={idpMode} />
           ) : activeView === 'API Explorer' ? (
