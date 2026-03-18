@@ -1,0 +1,39 @@
+# --- Dependencies ---
+node_modules/
+api/node_modules/
+.pnp
+.pnp.js
+
+# --- Build Outputs ---
+dist/
+api/dist/
+build/
+bin/
+obj/
+
+# --- Environment Variables & Secrets (CRITICAL) ---
+.env
+*.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+api/local.settings.json
+
+# --- Debugging & Logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+api/logs/
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Azure Specific ---
+.azurefunctions/
+.python_packages/
+__pycache__/

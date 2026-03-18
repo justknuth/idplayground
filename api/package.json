@@ -1,0 +1,14 @@
+{
+  "name": "idplayground-api",
+  "version": "1.0.0",
+  "description": "Azure Functions backend for IDPlayground",
+  "main": "src/functions/*.js",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests specified\""
+  },
+  "dependencies": {
+    "@azure/data-tables": "^13.2.2",
+    "@azure/functions": "^4.0.0"
+  }
+}

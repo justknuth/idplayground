@@ -1,0 +1,5 @@
+{
+  "name": "IDPlayground",
+  "description": "Interactive, multi-tenant learning sandbox for Auth0 OIDC and SAML flows.",
+  "requestFramePermissions": []
+}

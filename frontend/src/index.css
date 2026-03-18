@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --auth0-orange: #EB5424;
+  --auth0-orange-glow: rgba(235, 84, 36, 0.4);
+  --okta-blue: #007dc1;
+  --okta-blue-glow: rgba(0, 125, 193, 0.4);
+  --success-green: #10b981;
+  --success-green-glow: rgba(16, 185, 129, 0.4);
+  
+  --bg-dark: #0a0e17; /* Deep navy base */
+  --bg-panel: #111827; /* Charcoal panel */
+  --bg-highlight: #1f2937;
+  
+  --text-light: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.theme-auth0 {
+  --accent-color: var(--auth0-orange);
+  --accent-glow: var(--auth0-orange-glow);
+}
+
+.theme-okta {
+  --accent-color: var(--okta-blue);
+  --accent-glow: var(--okta-blue-glow);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-mono);
+  line-height: 1.5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.sidebar {
+  width: 280px;
+  background-color: var(--bg-panel);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.main-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-dark);
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+/* Typography & Elements */
+h1, h2, h3 {
+  color: var(--text-light);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}

@@ -1,0 +1,12 @@
+.roi-display {
+  font-size: 1.75rem;
+  color: var(--success-green);
+  text-shadow: 0 0 10px var(--success-green-glow);
+  font-weight: 700;
+  background: #000;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  text-align: right;
+  letter-spacing: 1px;
+}
